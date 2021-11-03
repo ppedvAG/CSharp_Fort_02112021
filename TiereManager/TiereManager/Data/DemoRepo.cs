@@ -9,6 +9,11 @@ namespace TiereManager.Data
 {
     public class DemoRepo : IRepository
     {
+        public int Count<T>() where T : class
+        {
+            throw new NotImplementedException();
+        }
+
         public IEnumerable<T> GetAll<T>() where T : class
         {
             if (typeof(T) == typeof(Katze))
