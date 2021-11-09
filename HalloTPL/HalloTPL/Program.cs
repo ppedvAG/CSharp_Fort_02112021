@@ -16,7 +16,7 @@ namespace HalloTPL
             //string-interpolation
             Console.WriteLine($"Hello World! {dateTime:d} v{z:000}");
 
-            //Parallel.Invoke(Zähle, Zähle, Zähle, Zähle);
+            //Parallel.Invoke(Zähle, Zähle, Zähle, Zähle, () => Zähle());
             //Parallel.For(0, 1000000, i => Console.WriteLine(i));
 
             Task t1 = new Task(() =>
@@ -36,7 +36,7 @@ namespace HalloTPL
                 Console.WriteLine("T1 Continue");
             });
 
-            //nur bei exceptiony    
+            //nur bei exception   
             t1.ContinueWith(t =>
             {
                 Console.WriteLine($"T1 Error: {t.Exception.InnerException.Message}");

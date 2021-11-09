@@ -42,14 +42,14 @@ namespace HalloLinq
             long result = calc.Invoke(12, 44);
             long result2 = calc(12, 44);
         }
-
+        
         private bool Filter(string arg)
         {
             if (arg.StartsWith("b"))
                 return true;
             else
                 return false;
-
+            
         }
 
         long Substract(int a, int b)
