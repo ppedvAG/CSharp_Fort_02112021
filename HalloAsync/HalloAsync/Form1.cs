@@ -65,7 +65,7 @@ namespace HalloAsync
             t.ContinueWith(t => MessageBox.Show($"Fertig: {t.Result}"), cts.Token, TaskContinuationOptions.None, ts);
 
 
-            t.ContinueWith(t =>
+            t.ContinueWith(t => 
                             {
                                 button3.Enabled = true;
                                 label1.Text = t.Result.ToString();
@@ -148,6 +148,11 @@ namespace HalloAsync
         {
             //MessageBox.Show(BerechneGanzLangsam(745).ToString());
             MessageBox.Show((await BerechneGanzLangsamAsync(745)).ToString());
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

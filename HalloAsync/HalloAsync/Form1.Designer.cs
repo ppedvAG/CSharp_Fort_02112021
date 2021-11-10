@@ -43,9 +43,10 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 222);
+            this.progressBar1.Location = new System.Drawing.Point(9, 173);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(662, 46);
+            this.progressBar1.Size = new System.Drawing.Size(509, 36);
             this.progressBar1.TabIndex = 0;
             // 
             // button1
@@ -53,9 +54,10 @@
             this.button1.AutoSize = true;
             this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(22, 46);
+            this.button1.Location = new System.Drawing.Point(17, 36);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(249, 42);
+            this.button1.Size = new System.Drawing.Size(187, 35);
             this.button1.TabIndex = 1;
             this.button1.Text = "Start ohne Threading";
             this.button1.UseVisualStyleBackColor = true;
@@ -65,9 +67,10 @@
             // 
             this.button2.AutoSize = true;
             this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.Location = new System.Drawing.Point(22, 110);
+            this.button2.Location = new System.Drawing.Point(17, 86);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 42);
+            this.button2.Size = new System.Drawing.Size(189, 35);
             this.button2.TabIndex = 2;
             this.button2.Text = "Start TPL (Dispatcher)";
             this.button2.UseVisualStyleBackColor = true;
@@ -77,9 +80,10 @@
             // 
             this.button3.AutoSize = true;
             this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.Location = new System.Drawing.Point(306, 46);
+            this.button3.Location = new System.Drawing.Point(235, 36);
+            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(287, 42);
+            this.button3.Size = new System.Drawing.Size(215, 35);
             this.button3.TabIndex = 3;
             this.button3.Text = "Start TPL (TaskScheduler)";
             this.button3.UseVisualStyleBackColor = true;
@@ -89,9 +93,10 @@
             // 
             this.button4.AutoSize = true;
             this.button4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button4.Location = new System.Drawing.Point(15, 174);
+            this.button4.Location = new System.Drawing.Point(12, 136);
+            this.button4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(140, 42);
+            this.button4.Size = new System.Drawing.Size(108, 35);
             this.button4.TabIndex = 4;
             this.button4.Text = "Abbrechen";
             this.button4.UseVisualStyleBackColor = true;
@@ -100,9 +105,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(194, 174);
+            this.label1.Location = new System.Drawing.Point(149, 136);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 32);
+            this.label1.Size = new System.Drawing.Size(59, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "label1";
             // 
@@ -110,9 +116,10 @@
             // 
             this.button5.AutoSize = true;
             this.button5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button5.Location = new System.Drawing.Point(306, 110);
+            this.button5.Location = new System.Drawing.Point(235, 86);
+            this.button5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(202, 42);
+            this.button5.Size = new System.Drawing.Size(155, 35);
             this.button5.TabIndex = 6;
             this.button5.Text = "Start async/await";
             this.button5.UseVisualStyleBackColor = true;
@@ -124,9 +131,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.BackColor = System.Drawing.Color.Silver;
-            this.pictureBox1.Location = new System.Drawing.Point(175, 294);
+            this.pictureBox1.Location = new System.Drawing.Point(135, 230);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(499, 236);
+            this.pictureBox1.Size = new System.Drawing.Size(384, 184);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
@@ -135,9 +143,10 @@
             // 
             this.button6.AutoSize = true;
             this.button6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button6.Location = new System.Drawing.Point(36, 294);
+            this.button6.Location = new System.Drawing.Point(28, 230);
+            this.button6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(119, 42);
+            this.button6.Size = new System.Drawing.Size(93, 35);
             this.button6.TabIndex = 8;
             this.button6.Text = "Load Pic ";
             this.button6.UseVisualStyleBackColor = true;
@@ -147,9 +156,10 @@
             // 
             this.button7.AutoSize = true;
             this.button7.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button7.Location = new System.Drawing.Point(306, 164);
+            this.button7.Location = new System.Drawing.Point(235, 128);
+            this.button7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(368, 42);
+            this.button7.Size = new System.Drawing.Size(274, 35);
             this.button7.TabIndex = 9;
             this.button7.Text = "Start alte, langsame Berechnung";
             this.button7.UseVisualStyleBackColor = true;
@@ -157,9 +167,9 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(692, 542);
+            this.ClientSize = new System.Drawing.Size(532, 423);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.pictureBox1);
@@ -170,8 +180,10 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.progressBar1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
