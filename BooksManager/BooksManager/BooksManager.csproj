@@ -7,4 +7,8 @@
     <UseWindowsForms>true</UseWindowsForms>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BooksManager.Data\BooksManager.Data.csproj" />
+  </ItemGroup>
+
 </Project>

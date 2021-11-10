@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Net.Http;
 using System.Text.Json;
 using System.Windows.Forms;
 
@@ -18,16 +17,10 @@ namespace BooksManager
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            var url = $"https://www.googleapis.com/books/v1/volumes?q={textBox1.Text}";
+            var bm = new Data.BooksManager();
 
-            var http = new HttpClient();
-
-            var json = await http.GetStringAsync(url);
-
-            BooksResult br = JsonSerializer.Deserialize<BooksResult>(json);
-
-
-            dataGridView1.DataSource = br.items.Select(x => x.volumeInfo).ToList();
+            var result = await bm.GetVolumeinfoFromGoogleAsync(textBox1.Text);
+            dataGridView1.DataSource = result.ToList();
 
         }
 
@@ -37,9 +30,9 @@ namespace BooksManager
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                var json = JsonSerializer.Serialize((IEnumerable<Volumeinfo>)dataGridView1.DataSource,
-                                                new JsonSerializerOptions() { WriteIndented = true });
-                await File.WriteAllTextAsync(dlg.FileName, json);
+                var bm = new Data.BooksManager();
+                await bm.Save(dlg.FileName, (IEnumerable<Volumeinfo>)dataGridView1.DataSource);
+                MessageBox.Show("Speichern erfolgreich");
             }
         }
 
@@ -49,9 +42,8 @@ namespace BooksManager
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                var json = await File.ReadAllTextAsync(dlg.FileName);
-                IEnumerable<Volumeinfo> vi = JsonSerializer.Deserialize<IEnumerable<Volumeinfo>>(json);
-                dataGridView1.DataSource = new BindingList<Volumeinfo>(vi.ToList());
+                var bm = new Data.BooksManager();
+                dataGridView1.DataSource = new BindingList<Volumeinfo>((await bm.Load(dlg.FileName)).ToList());
             }
         }
     }
