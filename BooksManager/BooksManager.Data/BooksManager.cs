@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace BooksManager.Data
 {
+    /// <summary>
+    /// Business Logic für Bücher
+    /// </summary>
     public class BooksManager
     {
 
