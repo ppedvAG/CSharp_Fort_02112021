@@ -9,6 +9,20 @@ namespace BooksManager.Data
 {
     public class BooksManager
     {
+
+        public IBooksRepository BooksRepository { get;  }
+
+        public BooksManager(IBooksRepository booksRepository)
+        {
+            BooksRepository = booksRepository;
+        }
+
+
+        public Volumeinfo GetBookWithMostPages()
+        {
+            return BooksRepository.Load().Result.OrderBy(x => x.pageCount).FirstOrDefault();
+        }
+
         public async Task<IEnumerable<Volumeinfo>> GetVolumeinfoFromGoogleAsync(string search)
         {
             var url = $"https://www.googleapis.com/books/v1/volumes?q={search}";
@@ -22,19 +36,6 @@ namespace BooksManager.Data
             return br.items.Select(x => x.volumeInfo);
         }
 
-        public async Task Save(string fileName, IEnumerable<Volumeinfo> volumeinfo)
-        {
-            var opts = new JsonSerializerOptions() { WriteIndented = true };
-            var json = JsonSerializer.Serialize(volumeinfo, opts);
-                       
-            await File.WriteAllTextAsync(fileName, json);
-        }
-
-        public async Task<IEnumerable<Volumeinfo>> Load(string fileName)
-        {
-            var json = await File.ReadAllTextAsync(fileName);
-            return JsonSerializer.Deserialize<IEnumerable<Volumeinfo>>(json);
-        }
 
 
     }

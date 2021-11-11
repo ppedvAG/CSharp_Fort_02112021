@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BooksManager.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -17,7 +18,7 @@ namespace BooksManager
 
         private async void button1_Click(object sender, EventArgs e)
         {
-            var bm = new Data.BooksManager();
+            var bm = new Data.BooksManager(null);
 
             var result = await bm.GetVolumeinfoFromGoogleAsync(textBox1.Text);
             dataGridView1.DataSource = result.ToList();
@@ -30,8 +31,8 @@ namespace BooksManager
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                var bm = new Data.BooksManager();
-                await bm.Save(dlg.FileName, (IEnumerable<Volumeinfo>)dataGridView1.DataSource);
+                var bm = new Data.BooksManager(new BooksJsonRepository(dlg.FileName));
+                await bm.BooksRepository.Save((IEnumerable<Volumeinfo>)dataGridView1.DataSource);
                 MessageBox.Show("Speichern erfolgreich");
             }
         }
@@ -42,8 +43,8 @@ namespace BooksManager
 
             if (dlg.ShowDialog() == DialogResult.OK)
             {
-                var bm = new Data.BooksManager();
-                dataGridView1.DataSource = new BindingList<Volumeinfo>((await bm.Load(dlg.FileName)).ToList());
+                var bm = new Data.BooksManager(new BooksJsonRepository(dlg.FileName));
+                dataGridView1.DataSource = new BindingList<Volumeinfo>((await bm.BooksRepository.Load()).ToList());
             }
         }
     }
