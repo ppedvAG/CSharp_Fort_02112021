@@ -3,6 +3,7 @@ using BooksManager.Data;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
@@ -23,7 +24,7 @@ namespace MyXMLRepo
             {
                 using (var sr = new StreamReader(FileName))
                 {
-                    var serial = new XmlSerializer(typeof(IEnumerable<Volumeinfo>));
+                    var serial = new XmlSerializer(typeof(List<Volumeinfo>));
                     return (IEnumerable<Volumeinfo>)serial.Deserialize(sr);
                 }
             });
@@ -35,8 +36,8 @@ namespace MyXMLRepo
             {
                 using (var sw = new StreamWriter(FileName))
                 {
-                    var serial = new XmlSerializer(typeof(IEnumerable<Volumeinfo>));
-                    serial.Serialize(sw, volumeinfo);
+                    var serial = new XmlSerializer(typeof(List<Volumeinfo>));
+                    serial.Serialize(sw, volumeinfo.ToList());
                 }
             });
         }
